@@ -9,5 +9,5 @@ function getRandomDigit(from, to) {
 function isStringFit(str, maxLength) {
   return maxLength >= str.length;
 }
-  getRandomDigit(1,0);
-  isStringFit('Hey!', 10);
+getRandomDigit(1,0);
+isStringFit('Hey!', 10);
