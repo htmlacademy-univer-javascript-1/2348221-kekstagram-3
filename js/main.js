@@ -10,6 +10,7 @@ function getRandomDigit(from, to) {
 function isStringFit(str, maxLength) {
   return maxLength >= str.length;
 }
+
 isStringFit('Hey!', 10);
 
 const NUM_OF_COMMENTS = 3;
@@ -31,7 +32,7 @@ const DESCRIPTIONS = [
   'Можно вычеркнуть эту страну из списка',
   'Нечего добавить',
   'Моя жизнь – мои правила'
-  ];
+];
 
 const COMMENTS = [
   'Всё отлично!',
@@ -41,7 +42,7 @@ const COMMENTS = [
   'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
 ];
-  
+
 const NAMES = [
   'Ростислав',
   'Владислав',
@@ -59,13 +60,13 @@ const NAMES = [
   'София',
   'Полина'
 ];
-  
+
 function getRandomElementNotRep(array) {
   const newElement = getRandomElement(array);
   array.splice(array.indexOf(newElement), 1);
   return newElement;
 }
-  
+
 function getRandomElement(array) {
   return array[getRandomDigit(0, array.length - 1)];
 }
