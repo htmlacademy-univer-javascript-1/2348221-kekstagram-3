@@ -5,7 +5,7 @@ export const getData = (onSuccess) => {
       onSuccess(photos);
     });
 };
-  
+
 export const sendData = (onSuccess, onFail, body) => {
   fetch(
     'https://26.javascript.pages.academy/kekstagram',
@@ -16,7 +16,7 @@ export const sendData = (onSuccess, onFail, body) => {
   )
     .then((response) => {
       if (response.ok) {
-       onSuccess();
+        onSuccess();
       } else {
         onFail('Не удалось отправить форму. Попробуйте ещё раз');
       }
