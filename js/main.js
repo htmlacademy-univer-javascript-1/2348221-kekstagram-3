@@ -32,17 +32,17 @@ const DESCRIPTIONS = [
   'Нечего добавить',
   'Моя жизнь – мои правила'
   ];
-  
-  const COMMENTS = [
+
+const COMMENTS = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
   'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
   'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.',
   'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
-  ];
+];
   
-  const NAMES = [
+const NAMES = [
   'Ростислав',
   'Владислав',
   'Дмитрий',
@@ -58,31 +58,31 @@ const DESCRIPTIONS = [
   'Анастасия',
   'София',
   'Полина'
-  ];
+];
   
-  function getRandomElementNotRep(array) {
+function getRandomElementNotRep(array) {
   const newElement = getRandomElement(array);
   array.splice(array.indexOf(newElement), 1);
   return newElement;
-  }
+}
   
 function getRandomElement(array) {
-return array[getRandomDigit(0, array.length - 1)];
+  return array[getRandomDigit(0, array.length - 1)];
 }
 
 const createComment = () => ({
-id: getRandomDigit(0, 5000000),
-avatar: `img/avatar-${getRandomDigit(1, 6)}.svg`,
-message: getRandomElement(COMMENTS),
-name: getRandomElement(NAMES)
+  id: getRandomDigit(0, 5000000),
+  avatar: `img/avatar-${getRandomDigit(1, 6)}.svg`,
+  message: getRandomElement(COMMENTS),
+  name: getRandomElement(NAMES)
 });
 
 const createPhoto = () => ({
-id: getRandomElementNotRep(ARR_OF_ID_FOR_PHOTO),
-url: `photos/${getRandomElementNotRep(ARR_OF_I_FOR_URL)}.jpg`,
-description: getRandomElement(DESCRIPTIONS),
-likes: getRandomDigit(15, 200),
-comments: Array.from({length: NUM_OF_COMMENTS}, createComment)
+  id: getRandomElementNotRep(ARR_OF_ID_FOR_PHOTO),
+  url: `photos/${getRandomElementNotRep(ARR_OF_I_FOR_URL)}.jpg`,
+  description: getRandomElement(DESCRIPTIONS),
+  likes: getRandomDigit(15, 200),
+  comments: Array.from({length: NUM_OF_COMMENTS}, createComment)
 });
 
 Array.from({length: 25}, createPhoto);
